@@ -12,6 +12,14 @@ const HashTableVisualizer = () => {
   // State to hold any error messages
   const [error, setError] = useState(null);
 
+  // Function to play audio
+  const playAudio = (audioId) => {
+    const audio = document.getElementById(audioId);
+    if (audio) {
+      audio.play();
+    }
+  };
+
   // Handle the insert button click
   const handleInsert = () => {
     // Call the insert function from the hook
@@ -20,6 +28,8 @@ const HashTableVisualizer = () => {
     setError(result.error);
     // Clear the input value
     setInputValue('');
+    playAudio('cuckoo-audio'); // Play insert audio
+
   };
 
   // Handle the remove button click
@@ -30,6 +40,8 @@ const HashTableVisualizer = () => {
     setError(result.error);
     // Clear the input value
     setInputValue('');
+    playAudio('cuckoo-audio'); // Play remove audio
+
   };
 
   // Handle the rehash button click
@@ -38,6 +50,8 @@ const HashTableVisualizer = () => {
     const result = rehash();
     // Set the error message if any
     setError(result.error);
+    playAudio('cuckoo-audio'); // Play rehash audio
+
   };
 
   return (
@@ -74,6 +88,7 @@ const HashTableVisualizer = () => {
           ))}
         </div>
       </div>
+      <audio id="cuckoo-audio" src="/assets/cuckoo.mp3"></audio>
     </div>
   );
 };
