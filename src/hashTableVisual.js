@@ -74,14 +74,14 @@ const HashTableVisualizer = () => {
       {error && <p className="text-red-500">{error}</p>}
       <div className="flex justify-around">
         <div>
-          <h2 className="text-xl font-bold mb-2">Table 1</h2>
+          <h2 className="text-2xl font-bold mb-2">Table 1</h2>
           {/* Display the contents of table1 */}
           {table1.map((value, index) => (
             <div key={index} className="border p-6 font-medium">Slot {index}: {value}</div>
           ))}
         </div>
         <div>
-          <h2 className="text-xl font-bold mb-2">Table 2</h2>
+          <h2 className="text-2xl font-bold mb-2">Table 2</h2>
           {/* Display the contents of table2 */}
           {table2.map((value, index) => (
             <div key={index} className="border p-6 font-medium">Slot {index}: {value}</div>
